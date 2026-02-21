@@ -1,0 +1,24 @@
+#include <stdio.h>
+void insertionSort(int A[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = A[i];
+        int j = i - 1;
+
+        while (j >= 0 && A[j] > key) {
+            A[j + 1] = A[j];
+            j--;
+        }
+        A[j + 1] = key;
+    }
+}
+int main() {
+    int A[] = {12, 11, 13, 5, 6};
+    int n = sizeof(A) / sizeof(A[0]);
+
+    insertionSort(A, n);
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", A[i]);
+
+    return 0;
+}
